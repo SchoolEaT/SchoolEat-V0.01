@@ -4,7 +4,7 @@
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
-    margin-top: 165px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     }
@@ -18,32 +18,25 @@
         font-weight: 400;
         text-align: center;
     }
-    .inputs{
-        margin-top: 50px;
+    .dados{
+        margin-top: 15px;
     }
-    .input{
-        background: #FFCB44;
-        border-radius: 15px;
+    .dado{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         height: 4vh;
         margin-top: 20px;
         font-weight: bold;
-    }
-    .cadastrar{
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-    }
-    .botao{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        margin-top: 15px;
     }
     ion-button{
         --border-radius: 20px;
     }
     .sc-ion-input-md-h{
         --padding-start: 16px;
+    }
+    .voltar{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 30px;
     }

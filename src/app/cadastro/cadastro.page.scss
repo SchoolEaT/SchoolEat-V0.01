@@ -18,10 +18,32 @@ justify-content: center;
     font-weight: 400;
     text-align: center;
 }
+.inputs{
+    margin-top: 50px;
+}
 .input{
     background: #FFCB44;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     height: 4vh;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.cadastrar{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.botao{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+ion-button{
+    --border-radius: 20px;
+}
+.sc-ion-input-md-h{
+    --padding-start: 16px;
 }

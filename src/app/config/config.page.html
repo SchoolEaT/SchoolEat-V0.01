@@ -1,18 +1,36 @@
 <ion-header>
   <ion-toolbar color="warning">
-    <ion-title><div class="header"><img src="assets/img/kevao.png" width="8%" ><h1>SchoolEat</h1></div></ion-title>
+    <ion-title>Configurações</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-content>
+    <div class="introducao">
+      <h1>Seus dados:</h1>
+    </div>
+  
+    <div class="comeco">
+  
+    <div class="perfil">
+      <p>Nome:</p>
+      <p>Telefone:</p>
+      <p>Instituição:</p>
+      <p>Turma:</p>
+    </div>
+    <img src="assets/img/editar.svg">
+    <img src="assets/img/sair.svg">
+  </div>
+  
+
   <div class="opcao">
     <img src="assets/img/ajuda.svg">Ajuda
   </div>
-  <div class="opcao">
+  <div class="opcao" routerLink="/tabs/sobre">
     <img src="assets/img/sobre.svg">Sobre o Aplicativo
   </div>
-  <div class="opcao">
+  <div class="opcao" routerLink="/tabs/privacidade">
     <img src="assets/img/privacidade.svg">Políticas de privacidade
   </div>
   <div class="opcao">
