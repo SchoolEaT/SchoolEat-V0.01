@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-
-</ion-content>
+<ion-content color="warning">
+  <div class="card">
+  <div class="conteudo">
+    
+    <div class="titulo">
+    <h1>Fazer Login</h1>
+    </div>
+    <div class="inputs">
+      
+    <div class="input">
+      <!-- <p>{{erro}}</p> -->
+      <ion-input placeholder="Email:" [(ngModel)]="userLogin.email"></ion-input>
+      
+    </div>
+    <div class="input">
+      <ion-input placeholder="Senha:"  [type]="passwordType" [(ngModel)]="userLogin.password"></ion-input>
+      <ion-icon name="eye"  class="eye"  item-end  (click)="togglePassword()"></ion-icon>
+    </div>
+    <ion-text (click)="EsqueciSenha()" class="recuperarSenha">Perdi a senha</ion-text> 
+        <div class="cadastrar">
+           
+            <ion-button size="small" color="warning" (click)="submit()">Logar</ion-button>
+        </div>
+            <div class="botao">
+              <ion-button size="small" color="warning" (click)="cadastro()">Não possui cadastro? Faça-o agora</ion-button>
+            </div>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+  
