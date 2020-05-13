@@ -12,22 +12,37 @@
     <div class="titulo">
     <h1>Cadastrar produto</h1>
     </div>
+
+    <ion-item>
+        <img src="#" (click)="youPhoto()" *ngIf="!produto.fotosProduto">
+        <img [src]="produto.fotosProduto[0]" (click)="youPhoto()" *ngIf="produto.fotosProduto" >
+    </ion-item>
+    <ion-slides page="true" [options]="slideOpts" *ngIf="produto.fotosProduto">
+        <ion-slide *ngFor="let F of produto.fotosProduto; let i=index">
+          <img src="{{F}}"  (click)="removePhoto(i)"> 
+        </ion-slide>
+    </ion-slides>
     <div class="inputs">
       
     <div class="input">
-        <ion-input placeholder="Nome:"></ion-input>
+        <ion-input placeholder="Nome:" type="text"  minlength="5" maxlength="50" #nome="ngModel" pattern="[a-z\s]+$" required name="nomeProduto" [(ngModel)]="produto.nomeProduto" ></ion-input>
     </div>
+      <ion-text *ngIf="nome.dirty && nome.invalid" color="danger">apenas letras (minusculas)</ion-text>
+      
     <div class="input">
-      <ion-input placeholder="Descrição:"></ion-input>
+      <ion-input placeholder="Descrição:"type="text" minlength="5" maxlength="100" #descri="ngModel" pattern="[a-z\s]+$" [(ngModel)]="produto.descricaoProduto"></ion-input>
     </div>
+     <ion-text *ngIf="descri.dirty && descri.invalid" color="danger">apenas letras (minusculas)</ion-text>
     <div class="input">
-      <ion-input placeholder="Tipo:"></ion-input>
+      <ion-input placeholder="Tipo:" type="text" minlength="2" maxlength="20" pattern="[a-z\s]+$"  #tipo="ngModel" [(ngModel)]="produto.tipoProduto"></ion-input>
     </div>
+    <ion-text *ngIf="tipo.dirty && tipo.invalid" color="danger">apenas letras (minusculas)</ion-text>
     <div class="input">
-      <ion-input placeholder="Valor:"></ion-input>
+      <ion-input placeholder="Valor:"  #Valor="ngModel"  minlength="1" maxlength="15" [(ngModel)]="produto.valorProduto" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$"></ion-input>
     </div>
+    <ion-text *ngIf="Valor.invalid && Valor.dirty" >Valor invalido</ion-text>
         <div class="cadastrar">
-          <ion-button size="small" color="warning">CADASTRAR</ion-button>
+          <ion-button size="small" color="warning" (click)="save()" >CADASTRAR</ion-button>
         </div>
         <div class="voltar">
           <ion-button size="small" color="warning" routerLink="/tabs/home">voltar para o início</ion-button>
