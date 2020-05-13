@@ -1,9 +1,9 @@
 export interface Usuario {
-     idUser?:string;
+    idUser?: string;
     nome?: string;
     telefone?: string;
-    email?:string;
+    email?: string;
     password?: string;
-    instituicao?:string;
-    turma?:string;
+    instituicao?: string;
+    turma?: string;
 }

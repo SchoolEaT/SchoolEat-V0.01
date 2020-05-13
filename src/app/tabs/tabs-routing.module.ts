@@ -142,6 +142,56 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'cadastro-produto',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../cadastro-produto/cadastro-produto.module').then(m => m.CadastroProdutoPageModule)
+          }
+        ]
+      },
+      {
+        path: 'sobre',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../sobre/sobre.module').then(m => m.SobrePageModule)
+          }
+        ]
+      },
+      {
+        path: 'privacidade',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../privacidade/privacidade.module').then(m => m.PrivacidadePageModule)
+          }
+        ]
+      },
+      {
+        path: 'vendedor',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../vendedor/vendedor.module').then(m => m.VendedorPageModule)
+          }
+        ]
+      },
+      {
+        path: 'perfil',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../perfil/perfil.module').then(m => m.PerfilPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
