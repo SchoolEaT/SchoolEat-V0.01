@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { CadastroPageRoutingModule } from './cadastro-routing.module';
+
+import { BrMasker4Module} from 'brmasker4';
 
 import { CadastroPage } from './cadastro.page';
 
@@ -13,7 +15,9 @@ import { CadastroPage } from './cadastro.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroPageRoutingModule
+    CadastroPageRoutingModule,
+    ReactiveFormsModule,
+    BrMasker4Module
   ],
   declarations: [CadastroPage]
 })

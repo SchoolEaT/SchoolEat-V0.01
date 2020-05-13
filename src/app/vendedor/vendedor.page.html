@@ -7,14 +7,14 @@
 <ion-content>
   
   <div class="card">
-  <div class="conteudo">
+  <div class="conteudo" *ngIf="usuarios">
     
     <div class="titulo">
     <h1>Sobre o vendedor</h1>
     </div>
     <div class="dados">
     <div class="dado">
-        <p>Nome:</p>
+        <p>Nome:{{usuarios.nome}}</p>
     </div>
     <div class="dado">
       <p>Telefone:</p>

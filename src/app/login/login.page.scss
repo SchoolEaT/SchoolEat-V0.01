@@ -11,6 +11,17 @@
     .conteudo{
         width: 80%;
     }
+    .recuperarSenha{
+         margin-top: 20px;
+        // height: 10px;
+        color:red;
+        //border: solid 1px red;
+    }
+    .eye{
+        font-size: 30px;
+      
+        margin-right: 10px;
+    }
     .titulo{
         padding-top: 1px;
     }
@@ -43,6 +54,7 @@
     }
     ion-button{
         --border-radius: 20px;
+        margin-top: -10px;
     }
     .sc-ion-input-md-h{
         --padding-start: 16px;

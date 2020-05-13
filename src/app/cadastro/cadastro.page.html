@@ -1,35 +1,62 @@
 
 <ion-content color="warning">
-<div class="card">
-<div class="conteudo">
+
+  
+<div class="card" >
+<div class="conteudo"  > 
   
   <div class="titulo">
   <h1>Fazer cadastro</h1>
   </div>
+  
+
   <div class="inputs">
     
   <div class="input">
-      <ion-input placeholder="Nome:"></ion-input>
+      <ion-input placeholder="Nome:" type="text" #nome="ngModel" pattern="[a-z\s]+$" [(ngModel)]="userRegister.nome"  #fc="ngModel"    required></ion-input>
   </div>
+  <ion-text *ngIf="nome.invalid && nome.dirty" color="danger" >Apenas Letras (Minusculas)</ion-text>
   <div class="input">
-    <ion-input placeholder="Telefone:"></ion-input>
+    <ion-input  type="email"   placeholder="Email:"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required #e="ngModel" [(ngModel)]="userRegister.email" ></ion-input>
   </div>
+  <ion-text class="ValidacaoSenha" *ngIf="e.invalid && e.dirty" color="danger">Email invalido</ion-text>
+  <!-- <ion-text class="ValidacaoSenha" *ngIf="e.valid" color="secondary">Email valido</ion-text> -->
   <div class="input">
-    <ion-input placeholder="Senha:"></ion-input>
+    <ion-input placeholder="Telefone" type="tel" maxlength="15" #tel="ngModel"  required [(ngModel)]="userRegister.telefone" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" ></ion-input>
+
   </div>
+  <!-- <ion-text *ngIf="tel.invalid && tel.dirty">Telefone invalido</ion-text> -->
+  
   <div class="input">
-    <ion-input placeholder="Instituição:"></ion-input>
+    <ion-input placeholder="Senha:" name="senha" [type]="passwordType" minlength="7"  maxlength="15"  #s="ngModel"  required name="password" [(ngModel)]="userRegister.password"></ion-input>
+    <ion-icon name="eye" class="eye"   item-end  (click)="togglePassword()"></ion-icon>
   </div>
+
+  <ion-text  class="ValidacaoSenha" *ngIf="s.valid" color="primary">Senha Boa</ion-text>
+  <ion-text  class="ValidacaoSenha" *ngIf="s.invalid && s.dirty" color="danger">Senha muito curta</ion-text>
+  
   <div class="input">
-    <ion-input placeholder="Turma:"></ion-input>
+    <ion-input placeholder="Confirmação de Senha:" [disabled]="s.value === '' " name="ConfSenha" [(ngModel)]="ConfSenha" [type]="passwordType" minlength="7" maxlength="15" required #c = "ngModel"></ion-input>
+    
   </div>
+  <ion-text  class="ValidacaoSenha" *ngIf="(c.value != s.value) && c.dirty" color="danger">Senhas diferentes</ion-text>
+  <div class="input">
+    <ion-input placeholder="Instituição:" #inst = "ngModel" [(ngModel)]="userRegister.instituicao" pattern="[a-z\s]+$" required></ion-input>
+  </div>
+    <ion-text *ngIf="inst.invalid && inst.dirty" color="danger" >apenas letras (minusculas)</ion-text>
+  <div class="input">
+    <ion-input placeholder="Turma:"  minlength="2" maxlength="4" [(ngModel)]="userRegister.turma"></ion-input>
+  </div>
+  
       <div class="cadastrar">
-        <ion-button size="small" color="warning">CADASTRAR</ion-button>
+        <ion-button size="small" color="warning" type="submit" [disabled] = "fc.invalid   || (c.value != s.value) "  (click)="register()">CADASTRAR</ion-button>
       </div>
           <div class="botao">
             <ion-button size="small" color="warning" routerLink="/login">Já possui cadastro? Fazer Login</ion-button>
           </div>
     </div>
+ 
   </div>
 </div>
+
 </ion-content>

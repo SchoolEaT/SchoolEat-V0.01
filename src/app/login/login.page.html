@@ -9,16 +9,21 @@
     <div class="inputs">
       
     <div class="input">
-      <ion-input placeholder="Telefone:"></ion-input>
+      <!-- <p>{{erro}}</p> -->
+      <ion-input placeholder="Email:" [(ngModel)]="userLogin.email"></ion-input>
+      
     </div>
     <div class="input">
-      <ion-input placeholder="Senha:"></ion-input>
+      <ion-input placeholder="Senha:"  [type]="passwordType" [(ngModel)]="userLogin.password"></ion-input>
+      <ion-icon name="eye"  class="eye"  item-end  (click)="togglePassword()"></ion-icon>
     </div>
+    <ion-text (click)="EsqueciSenha()" class="recuperarSenha">Perdi a senha</ion-text> 
         <div class="cadastrar">
-          <ion-button size="small" color="warning">Logar</ion-button>
+           
+            <ion-button size="small" color="warning" (click)="submit()">Logar</ion-button>
         </div>
             <div class="botao">
-              <ion-button size="small" color="warning" routerLink="/cadastro">Não possui cadastro? Faça-o agora</ion-button>
+              <ion-button size="small" color="warning" (click)="cadastro()">Não possui cadastro? Faça-o agora</ion-button>
             </div>
       </div>
     </div>

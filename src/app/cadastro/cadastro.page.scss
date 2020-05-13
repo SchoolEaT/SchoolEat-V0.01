@@ -11,6 +11,20 @@ justify-content: center;
 .conteudo{
     width: 80%;
 }
+.eye{
+    font-size: 30px;
+  
+    margin-right: 10px;
+}
+.ValidacaoSenha{
+    margin-top: 6px;
+    //width: 142px;
+    //height: 10px;
+    
+    margin-left: 60px;
+    // font-size:13px ;
+   // border: solid 1px red;
+}
 .titulo{
     padding-top: 1px;
 }
@@ -18,9 +32,9 @@ justify-content: center;
     font-weight: 400;
     text-align: center;
 }
-.inputs{
-    margin-top: 50px;
-}
+// .inputs{
+//     //margin-top: 50px;
+// }
 .input{
     background: #FFCB44;
     border-radius: 15px;

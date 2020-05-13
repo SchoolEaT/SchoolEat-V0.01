@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../home/home.module').then(m => m.HomePageModule)
+              import('../home/home.module').then(m => m.HomePageModule),
+              canActivate: [AuthGuard]
           }
         ]
       },
@@ -23,7 +25,8 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../config/config.module').then(m => m.ConfigPageModule)
+              import('../config/config.module').then(m => m.ConfigPageModule),
+              canActivate: [AuthGuard]
           }
         ]
       },
@@ -33,7 +36,108 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../pesquisa/pesquisa.module').then(m => m.PesquisaPageModule)
+              import('../pesquisa/pesquisa.module').then(m => m.PesquisaPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'cadastro-produto',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../cadastro-produto/cadastro-produto.module').then(m => m.CadastroProdutoPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'sobre',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../sobre/sobre.module').then(m => m.SobrePageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'privacidade',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../privacidade/privacidade.module').then(m => m.PrivacidadePageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'vendedor',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../vendedor/vendedor.module').then(m => m.VendedorPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'vendedor/:idUser',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../vendedor/vendedor.module').then(m => m.VendedorPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'perfil',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../perfil/perfil.module').then(m => m.PerfilPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      // Exemplo deletar depois............
+      {
+        path: 'perfil/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../perfil/perfil.module').then(m => m.PerfilPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      }, 
+      {
+        path: 'perfil-produto',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../perfil-produtos/perfil-produto/perfil-produto.module').then(m => m.PerfilProdutoPageModule),
+              canActivate: [AuthGuard]
+          }
+        ]
+      },
+      {
+        path: 'perfil-produto/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../perfil-produtos/perfil-produto/perfil-produto.module').then(m => m.PerfilProdutoPageModule),
+              canActivate: [AuthGuard]
           }
         ]
       },

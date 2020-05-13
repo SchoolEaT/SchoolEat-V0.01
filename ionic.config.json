@@ -1,5 +1,7 @@
 {
   "name": "schooleat",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

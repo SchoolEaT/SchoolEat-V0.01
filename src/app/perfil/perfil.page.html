@@ -6,7 +6,7 @@
 
 <ion-content>
   
-  <div class="card">
+  <div class="card" *ngIf="produtos">
   <div class="conteudo">
     
     <div class="titulo">
@@ -14,10 +14,10 @@
     </div>
     <div class="dados">
     <div class="dado">
-        <p>Nome:</p>
+        <!-- <ion-input [(ngModel)]="produtos.nomeProduto">Nome:</ion-input> -->
     </div>
     <div class="dado">
-      <p>Telefone:</p>
+      <p>Telefone:{{produtos.tipoProduto}}</p>
     </div>
     <div class="dado">
       <p>Instituição:</p>
