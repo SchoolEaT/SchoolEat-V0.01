@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { AuthService } from './../services/auth.service';
 import { Usuario } from './../interfaces/usuario';
 import { Component, OnInit, ɵConsole } from '@angular/core';
-import { LoadingController, ToastController, NavController } from '@ionic/angular';
+import { LoadingController, ToastController, NavController, NavParams } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -22,6 +22,7 @@ export class CadastroPage implements OnInit {
   private loading: any;
   public cadastro: FormGroup;
 
+
   constructor
     (
     public loadingCtrl: LoadingController,
@@ -30,9 +31,10 @@ export class CadastroPage implements OnInit {
     private usuarioService:UsuarioService,
     private mensagem:MensagemService,
     private fBuilder: FormBuilder,
-    private navCtrl: NavController
-
+    private navCtrl: NavController,
+      private formBuilder: FormBuilder
     ) {
+   
   }
 
 

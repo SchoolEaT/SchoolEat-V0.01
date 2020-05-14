@@ -65,6 +65,17 @@ ionViewWillEnter(){
 } 
 
 
+doRefresh(event){
+  console.log("Funfando");
+
+  setTimeout(()=>{
+    console.log("Funfando muito");
+    event.target.complete();
+  }, 2000);
+}
+
+
+
 
 
 

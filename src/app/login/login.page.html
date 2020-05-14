@@ -10,9 +10,9 @@
       
     <div class="input">
       <!-- <p>{{erro}}</p> -->
-      <ion-input placeholder="Email:" [(ngModel)]="userLogin.email"></ion-input>
-      
+      <ion-input placeholder="Email:"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel" [(ngModel)]="userLogin.email"></ion-input>
     </div>
+        <ion-text *ngIf="email.invalid && email.dirty"  color="danger">Digite Corretamente</ion-text>
     <div class="input">
       <ion-input placeholder="Senha:"  [type]="passwordType" [(ngModel)]="userLogin.password"></ion-input>
       <ion-icon name="eye"  class="eye"  item-end  (click)="togglePassword()"></ion-icon>
@@ -20,7 +20,7 @@
     <ion-text (click)="EsqueciSenha()" class="recuperarSenha">Perdi a senha</ion-text> 
         <div class="cadastrar">
            
-            <ion-button size="small" color="warning" (click)="submit()">Logar</ion-button>
+            <ion-button size="small" color="warning" [disabled]="email.invalid && email.dirty" (click)="submit()">Logar</ion-button>
         </div>
             <div class="botao">
               <ion-button size="small" color="warning" (click)="cadastro()">Não possui cadastro? Faça-o agora</ion-button>

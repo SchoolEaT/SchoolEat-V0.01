@@ -29,6 +29,7 @@ export class MensagemService {
    return await this.loadingController.create({
      message: 'Aguarde por favor',
      duration: 1000,
+     cssClass: 'primary',
    }).then(
      res =>{
        res.present();

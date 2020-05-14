@@ -6,6 +6,18 @@
 
 
 <ion-content>
+  <!-- Refresh -->
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+    pullingIcon="chevron-down-circle-outline"
+    pullingText="Pull to refresh"
+    refreshingSpinner="circles"
+    refreshingText="Carregando..."
+    >
+    </ion-refresher-content>
+</ion-refresher>
+
+
   <div class="introducao">
     <h1>Seus dados:</h1>
   </div>
