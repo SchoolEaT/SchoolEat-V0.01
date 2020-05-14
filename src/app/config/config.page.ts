@@ -1,3 +1,5 @@
+import { MensagemService } from './../services/mensagem.service';
+import { HomePage } from './../home/home.page';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigPage implements OnInit {
 
-  constructor() { }
+  constructor(private mensagem:MensagemService) { }
 
   ngOnInit() {
   }
-
+  public bloqueador(){
+    this.mensagem.presentAlert("Aviso","Opção valida para proxima atualização !")
+  }
 }

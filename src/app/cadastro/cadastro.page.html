@@ -24,7 +24,7 @@
     <!-- <ion-text class="ValidacaoSenha" *ngIf="e.valid" color="secondary">Email valido</ion-text> -->
 
     <div class="input">
-      <ion-input placeholder="Telefone: " type="tel" maxlength="15" #tel="ngModel"  required [(ngModel)]="userRegister.telefone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}$" ></ion-input>
+      <ion-input placeholder="Telefone: " [brmasker]="{phone:true}" name="phone"  maxlength="15" #tel="ngModel"  required [(ngModel)]="userRegister.telefone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}$" ></ion-input>
   
     </div>
     <ion-text *ngIf="tel.invalid && tel.dirty" color="danger">* Digite telefone - (99) 99999-9999</ion-text>

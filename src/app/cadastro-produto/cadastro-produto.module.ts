@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CadastroProdutoPageRoutingModule } from './cadastro-produto-routing.module';
-
+ import { BrMaskerModule } from 'br-mask';
 import { CadastroProdutoPage } from './cadastro-produto.page';
 
 @NgModule({
@@ -13,7 +13,9 @@ import { CadastroProdutoPage } from './cadastro-produto.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroProdutoPageRoutingModule
+    CadastroProdutoPageRoutingModule,
+    BrMaskerModule
+    
   ],
   declarations: [CadastroProdutoPage]
 })

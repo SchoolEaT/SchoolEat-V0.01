@@ -1,3 +1,4 @@
+import { MensagemService } from './../services/mensagem.service';
 import { Usuario } from './../interfaces/usuario';
 import { UsuarioService } from './../services/usuario.service';
 import { ProdutoService } from './../services/produto.service';
@@ -26,7 +27,8 @@ public usuario: Usuario= {};
     public authService:AuthService,
     public afs: AngularFirestore,
     private produtoService: ProdutoService,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private mensagem: MensagemService
     )
     { }
 
@@ -86,4 +88,8 @@ doRefresh(event){
       console.error(error)
     }
   }
+
+   public bloqueador(){
+     this.mensagem.presentAlert("Aviso","Opção valida para proxima atualização !")
+   }
 }

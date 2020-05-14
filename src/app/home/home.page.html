@@ -24,11 +24,11 @@
 
   <div class="comeco">
 
-  <div class="perfil" routerLink="/tabs/perfil/{usuario.key}" *ngIf="usuario" >
-    <p>Nome:{{usuario.nome}}</p>
-    <p>Telefone:{{usuario.telefone}} </p>
-    <p>Instituição:{{usuario.instituicao}}</p>
-    <p>Turma:{{usuario.turma}}</p>
+  <div class="perfil"(click)="bloqueador()" >
+      <h1>Bloqueado para proxima atualização</h1>
+    <!-- <p>Nome:</p>
+    <p>Telefone: </p>
+    <p>Instituição:</p> -->
   </div>
   <img src="assets/img/editar.svg" alt="">
   <img src="assets/img/sair.svg" alt="" (click)="logout()">
@@ -39,10 +39,11 @@
 </div>
 
 <div class="lista" >
-  <p>Nome:</p>
+    <h1>Bloqueado para proxima atualização</h1>
+  <!-- <p>Nome:</p>
   <p>Descrição:</p>
   <p>Tipo:</p>
-  <p>Valor:</p>
+  <p>Valor:</p> -->
 </div>
 
 <div class="adicionar">

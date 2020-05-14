@@ -9,6 +9,7 @@ import { CadastroPageRoutingModule } from './cadastro-routing.module';
 import { BrMasker4Module} from 'brmasker4';
 
 import { CadastroPage } from './cadastro.page';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { CadastroPage } from './cadastro.page';
     IonicModule,
     CadastroPageRoutingModule,
     ReactiveFormsModule,
-    BrMasker4Module
+    BrMaskerModule
   ],
   declarations: [CadastroPage]
 })
